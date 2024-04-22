@@ -1,6 +1,6 @@
 # Projeto LEDA - Steam-Dataset
 
-## 1 - Para que possa ser executado todo o código, primeiramente é necessário criar uma pasta onde deve conter as patas Conversão e Lib, sendo Conversão os algoritmos de ordenação utilizados e Lib todas as dependências e importações utilizadas
+## 1 - Para que possa ser executado todo o código, primeiramente é necessário criar uma pasta onde deve conter as pastas Conversão e Lib, sendo Conversão os algoritmos de ordenação utilizados e Lib todas as dependências e importações utilizadas
 
 ## 2 - Também faz-se necessário a pasta Archive, onde deve conter 3 subpastas dentro dela com os nomes de cada aspecto como Formatacao, OrdenacaoPreco e OrdenacaoConquista, lá será onde serão gerados os arquivos já ordenados pelos algoritmos persentes na pasta Conversão
 
