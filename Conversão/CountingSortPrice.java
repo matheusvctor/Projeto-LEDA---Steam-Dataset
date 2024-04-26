@@ -20,16 +20,16 @@ public class CountingSortPrice {
         List<String[]> rows = readCsv(INPUT_CSV);
         List<Game> games = convertToGames(rows);
 
-        // Melhor caso: já ordenado
+
         countingSort(games);
         writeCsv(games, "./games_price_countingSort_melhorCaso.csv");
 
-        // Médio caso: embaralhado
+
         Collections.shuffle(games);
         countingSort(games);
         writeCsv(games, "./games_price_countingSort_medioCaso.csv");
 
-        // Pior caso: ordenado inversamente
+
         Collections.reverse(games);
         countingSort(games);
         writeCsv(games, "./games_price_countingSort_piorCaso.csv");
@@ -38,7 +38,7 @@ public class CountingSortPrice {
     private static List<String[]> readCsv(String filePath) throws IOException, CsvException {
         try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
             List<String[]> allRows = reader.readAll();
-            allRows.remove(0); // Remove the header
+            allRows.remove(0); 
             return allRows;
         }
     }
