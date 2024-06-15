@@ -9,7 +9,7 @@
 
 ## 3 - O arquivo do banco de dados deve ser posto no seguinte local: \demo\src\main\resources\archive;
 
-## 4 - Antes de executar o Arquivo Main_upgrade.java é necessário executar o FormatacaoData.java, pois o mesmo utiliza este arquivo para ordenação (Pedido anteriormente no projeto)
+## 4 - Antes de executar o Arquivo Main_upgrade.java é necessário executar o  CreateDirectories.java para que os diretorios sejam devidamente criados e após isto o FormatacaoData.java, pois o mesmo utiliza este arquivo para ordenação (Pedido anteriormente no projeto);
 
 ## 5 - O arquivo Lib deve ser descompactado antes da execução do código, pois trata-se das dependências e importações do código.
 
