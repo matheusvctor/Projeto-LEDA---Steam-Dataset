@@ -8,7 +8,7 @@ public class GameUtils {
 
     public static Game[] readCSV(String filePath) throws IOException, ParseException {
         BufferedReader br = new BufferedReader(new FileReader(filePath));
-        String header = br.readLine(); // Skip header
+        String header = br.readLine(); 
         List<Game> gamesList = new ArrayList<>();
         String line;
         while ((line = br.readLine()) != null) {
@@ -30,7 +30,7 @@ public class GameUtils {
     }
 
     private static String[] parseLine(String line) {
-        String[] values = new String[39]; // Assuming the CSV has 39 columns
+        String[] values = new String[39]; 
         StringBuilder sb = new StringBuilder();
         boolean inQuotes = false;
         int index = 0;
