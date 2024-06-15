@@ -11,15 +11,15 @@ public class ShellSort {
 
         Game[] games = readCSV(inputFile);
 
-        // Ordenar por Data de Lançamento
+
         shellSort(games, Comparator.comparing(Game::getReleaseDate));
         writeCSV(games, outputDir + "sorted_shell_date.csv");
 
-        // Ordenar por Preço
+
         shellSort(games, Comparator.comparing(Game::getPrice));
         writeCSV(games, outputDir + "sorted_shell_price.csv");
 
-        // Ordenar por Conquistas
+
         shellSort(games, Comparator.comparing(Game::getAchievements));
         writeCSV(games, outputDir + "sorted_shell_achievements.csv");
     }
