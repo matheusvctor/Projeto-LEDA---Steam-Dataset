@@ -4,9 +4,8 @@ import java.io.File;
 
 public class CreateDirectories {
     public static void main(String[] args) {
-        String baseDir = "demo/src/main/resources";
+        String baseDir = "Projeto-LEDA---Steam-Dataset-main/demo/src/main/resources";
         String[] subDirs = {
-                "archive",
                 "archive/Arquivos Gerados Conquista",
                 "archive/Arquivos Project Upgrade",
                 "archive/Formatacoes",
@@ -14,7 +13,7 @@ public class CreateDirectories {
         };
 
         for (String dir : subDirs) {
-            File directory = new File(baseDir + "/" + dir);
+            File directory = new File(baseDir, dir);
             if (!directory.exists()) {
                 if (directory.mkdirs()) {
                     System.out.println("Directory " + directory.getPath() + " created successfully.");
