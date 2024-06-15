@@ -10,16 +10,13 @@ public class BucketSort {
         String outputDir = "demo/src/main/resources/archive/Arquivos Project Upgrade/";
 
         Game[] games = readCSV(inputFile);
-
-        // Ordenar por Data de Lançamento
+    
         bucketSort(games, Comparator.comparing(Game::getReleaseDate));
         writeCSV(games, outputDir + "sorted_bucket_date.csv");
 
-        // Ordenar por Preço
         bucketSort(games, Comparator.comparing(Game::getPrice));
         writeCSV(games, outputDir + "sorted_bucket_price.csv");
 
-        // Ordenar por Conquistas
         bucketSort(games, Comparator.comparing(Game::getAchievements));
         writeCSV(games, outputDir + "sorted_bucket_achievements.csv");
     }
@@ -27,14 +24,12 @@ public class BucketSort {
     public static void bucketSort(Game[] games, Comparator<Game> comparator) {
         if (games.length == 0) return;
 
-        // Create buckets
         int bucketCount = (int) Math.sqrt(games.length);
         List<List<Game>> buckets = new ArrayList<>(bucketCount);
         for (int i = 0; i < bucketCount; i++) {
             buckets.add(new ArrayList<>());
         }
 
-        // Determine the range of the data
         double minValue = Double.POSITIVE_INFINITY;
         double maxValue = Double.NEGATIVE_INFINITY;
         for (Game game : games) {
@@ -43,14 +38,12 @@ public class BucketSort {
             if (value > maxValue) maxValue = value;
         }
 
-        // Distribute the elements into buckets
         for (Game game : games) {
             double value = getComparableValue(game, comparator);
             int bucketIndex = (int) ((value - minValue) / (maxValue - minValue + 1) * bucketCount);
             buckets.get(bucketIndex).add(game);
         }
 
-        // Sort each bucket and concatenate the results
         int index = 0;
         for (List<Game> bucket : buckets) {
             if (!bucket.isEmpty()) {
@@ -97,7 +90,7 @@ public class BucketSort {
     }
 
     private static String[] parseLine(String line) {
-        String[] values = new String[39]; // Assuming the CSV has 39 columns
+        String[] values = new String[39]; 
         StringBuilder sb = new StringBuilder();
         boolean inQuotes = false;
         int index = 0;
